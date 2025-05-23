@@ -20,18 +20,16 @@
       "dest": "frontend/admin/index.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "frontend/$1"
+      "src": "/about",
+      "dest": "frontend/about.html"
     },
     {
-      "src": "/",
-      "dest": "frontend/index.html"
-    }
-  ],
-  "rewrites": [
+      "src": "/contact",
+      "dest": "frontend/contact.html"
+    },
     {
-      "source": "/(about|contact|countries|feature|service)",
-      "destination": "/frontend/$1.html"
+      "src": "/(.*)",
+      "dest": "frontend/$1"
     }
   ]
 }
