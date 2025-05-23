@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/server.js",
+      "src": "server.js",
       "use": "@vercel/node"
     },
     {
@@ -13,7 +13,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/server.js"
+      "dest": "server.js"
     },
     {
       "src": "/admin",
@@ -22,28 +22,16 @@
     {
       "src": "/(.*)",
       "dest": "frontend/$1"
+    },
+    {
+      "src": "/",
+      "dest": "frontend/index.html"
     }
   ],
   "rewrites": [
     {
-      "source": "/service",
-      "destination": "/frontend/service.html"
-    },
-    {
-      "source": "/about",
-      "destination": "/frontend/about.html"
-    },
-    {
-      "source": "/contact",
-      "destination": "/frontend/contact.html"
-    },
-    {
-      "source": "/countries",
-      "destination": "/frontend/countries.html"
-    },
-    {
-      "source": "/feature",
-      "destination": "/frontend/feature.html"
+      "source": "/(about|contact|countries|feature|service)",
+      "destination": "/frontend/$1.html"
     }
   ]
 }
