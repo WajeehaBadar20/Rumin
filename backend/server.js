@@ -105,7 +105,7 @@ app.use(cors({
 connectDB();
 
 // API Routes
-app.use("/contact", contactRoutes);
+app.use("/api/contact", contactRoutes);
 app.use("/api/auth", authRoutes);
 
 // Static files configuration for Vercel
