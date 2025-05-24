@@ -3,33 +3,21 @@
   "builds": [
     {
       "src": "backend/server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "backend/frontend/**/*",
-      "use": "@vercel/static"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["backend/frontend/**"]
+      }
     }
   ],
   "routes": [
     {
-      "src": "/api/.*",
-      "dest": "backend/server.js"
-    },
-    {
-      "src": "/admin",
-      "dest": "/backend/frontend/admin/index.html"
-    },
-    {
-      "src": "/(about|contact|countries|feature|service)",
-      "dest": "/backend/frontend/$1.html"
-    },
-    {
-      "src": "/",
-      "dest": "/backend/frontend/index.html"
+      "src": "/api/(contact|auth)",
+      "dest": "/backend/server.js",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/(.*)",
-      "dest": "/backend/frontend/$1"
+      "dest": "/backend/server.js"
     }
   ]
 }
