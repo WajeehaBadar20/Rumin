@@ -95,7 +95,8 @@ app.use(cors({
   origin: [
     process.env.FRONTEND_URL, 
     process.env.VERCEL_URL,
-    'http://localhost:5000'
+    'http://localhost:5000',
+    'https://rumin.vercel.app/api/contact'
   ],
   credentials: true
 }));

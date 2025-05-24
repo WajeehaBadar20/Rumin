@@ -123,7 +123,7 @@
         <!-- Contact Start -->
         <div class="container-fluid contact overflow-hidden py-5">
             <div class="container py-5">
-                <form id="contactForm" class="row g-5 mb-5">
+                <form action="https://rumin.vercel.app" id="contactForm" class="row g-5 mb-5">
                     <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                         <div class="sub-style">
                             <h5 class="sub-title text-primary pe-3">Quick Contact</h5>
@@ -347,19 +347,15 @@
         };
     
         try {
-            const response = await fetch("api/contact", {
+            const response = await fetch("/api/contact", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 mode: 'cors',  // Use 'cors' instead of 'no-cors'
                 body: JSON.stringify(formData),
-                // credentials: "include",
+                credentials: "include",
             });
-            if (!response.ok) {
-      const error = await response.text();
-      throw new Error(error);
-    }
     
             const data = await response.json();
             
