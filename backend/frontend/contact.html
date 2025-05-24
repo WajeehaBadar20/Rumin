@@ -354,8 +354,12 @@
                 },
                 mode: 'cors',  // Use 'cors' instead of 'no-cors'
                 body: JSON.stringify(formData),
-                credentials: "include",
+                // credentials: "include",
             });
+            if (!response.ok) {
+      const error = await response.text();
+      throw new Error(error);
+    }
     
             const data = await response.json();
             
