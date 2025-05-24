@@ -105,7 +105,9 @@ connectDB();
 
 // API Routes
 app.use("/api/contact", contactRoutes);
+app.use("/frontend/contact", contactRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/frontend/auth", authRoutes);
 
 // Static files configuration for Vercel
 const staticPath = path.join(__dirname, 'frontend');
