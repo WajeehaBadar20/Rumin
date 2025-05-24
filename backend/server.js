@@ -106,14 +106,7 @@ connectDB();
 // API Routes
 app.use("/api/contact", contactRoutes);
 app.use("/api/auth", authRoutes);
-// Verify frontend directory exists
-const frontendPath = path.join(__dirname, 'frontend');
-if (!fs.existsSync(frontendPath)) {
-  console.error('❌ Frontend directory not found at:', frontendPath);
-  console.log('Current directory contents:', fs.readdirSync(__dirname));
-} else {
-  console.log('✅ Found frontend directory at:', frontendPath);
-}
+
 // Static files configuration for Vercel
 const staticPath = path.join(__dirname, 'frontend');
 app.use(express.static(staticPath));
